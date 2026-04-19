@@ -17,6 +17,7 @@ structured data.
 -   [Examples](#examples)
 -   [Results](#results)
 -   [Compression](#compression)
+-   [Edge Cases](#edge-cases)
 -   [Architecture](#architecture)
 -   [How to Run](#how-to-run)
 -   [Limitations](#limitations)
@@ -120,6 +121,37 @@ Model       5.81 KB
 
 This demonstrates a learned representation that captures underlying
 structure.
+
+------------------------------------------------------------------------
+## Edge Cases
+
+The following examples illustrate how the model behaves under extreme or
+invalid inputs.
+
+### Extreme Noise
+
+    Input:         [9999, -100, 70]
+    Reconstructed: [100.0, 10.0, 72.0]
+
+### Multiple Corrupted Values
+
+    Input:         [0, 0, 70]
+    Reconstructed: [48.0, 52.0, 71.0]
+
+### Fully Corrupted Input
+
+    Input:         [0, 0, 0]
+    Reconstructed: [45.0, 55.0, 60.0]
+
+### Out-of-Distribution Input
+
+    Input:         [1000, 2000, -50]
+    Reconstructed: [100.0, 100.0, 10.0]
+
+### Partially Valid Input
+
+    Input:         [50, 999, 70]
+    Reconstructed: [48.0, 100.0, 69.7]
 
 ------------------------------------------------------------------------
 
