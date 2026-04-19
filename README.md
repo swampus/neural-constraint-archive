@@ -7,6 +7,8 @@
 Constraint-aware neural reconstruction for incomplete and corrupted
 structured data.
 
+https://medium.com/@dmitrijs.gavrilovs.swampus/what-if-we-didn-t-store-data-but-reconstructed-it-5612faf2522e?postPublishedType=initial
+
 ------------------------------------------------------------------------
 
 ## Table of Contents
